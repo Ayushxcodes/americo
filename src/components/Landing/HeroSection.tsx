@@ -5,19 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 // ---------------- SLIDE DATA ---------------- //
+// ---------------- SLIDE DATA ---------------- //
 const slides = [
   {
     title: (
       <>
-        Advancing Healthcare & Innovation with{" "}
-        <span className="text-teal-600">AI–Driven Pharmaceutical and Medical Technology Solutions</span>
+        Streamlining Clinic Operations with{" "}
+        <span className="text-teal-600">Smart AI-Enabled Software</span>
       </>
     ),
     subtitle:
-      "From molecule to monitoring — bridging research, devices and real-world impact.",
+      "Simplify scheduling, patient management, and analytics for efficient healthcare delivery.",
     image: "/Doctors-bro.png",
     footerText:
-      "Empowering healthcare teams with intelligent automation and breakthrough digital innovation.",
+      "Empowering clinics with intelligent automation and seamless workflow management.",
 
     // RECTANGLE SHAPE BLOCKS (Slide 1)
     shapes: (
@@ -29,18 +30,28 @@ const slides = [
           transition={{ duration: 0.5 }}
           className="bg-blue-100 rounded-xl p-8"
         >
-          <h2 className="text-4xl font-bold text-blue-900">8+</h2>
+          <h2 className="text-4xl font-bold text-blue-900">Simplified Operations</h2>
           <p className="mt-2 text-gray-700 font-medium">
-            Programs in Development
+            Streamline appointment scheduling, billing, and patient records.
           </p>
 
           <button className="mt-4 bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Explore Pipeline →
+            Learn More →
           </button>
         </motion.div>
 
         {/* Teal Rectangle */}
-        
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-teal-50 border border-teal-100 rounded-xl p-8"
+        >
+          <h2 className="text-3xl font-bold text-teal-700">Quick Implementation</h2>
+          <p className="mt-2 text-gray-700">
+            Get your clinic running efficiently from day one.
+          </p>
+        </motion.div>
       </div>
     ),
   },
@@ -49,15 +60,15 @@ const slides = [
   {
     title: (
       <>
-        Transforming R&D Pipelines with{" "}
-        <span className="text-blue-600">Predictive AI & Real-World Insights</span>
+        Ensuring Compliance & Secure Patient Data with{" "}
+        <span className="text-blue-600">Standards-Aligned Systems</span>
       </>
     ),
     subtitle:
-      "Accelerating drug discovery, device engineering, and quality operations.",
+      "HIPAA-compliant, secure, and reliable software for modern clinics.",
     image: "/Chat_bot.gif",
     footerText:
-      "AI models optimized for biotech, pharmaceuticals, and clinical research.",
+      "Protecting sensitive healthcare data while optimizing operations.",
 
     // RECTANGLE SHAPE BLOCKS (Slide 2)
     shapes: (
@@ -71,7 +82,7 @@ const slides = [
         >
           <h2 className="text-3xl font-bold text-teal-700">AI-Powered Insights</h2>
           <p className="mt-2 text-gray-700">
-            Real-time analytics enabling faster decision-making.
+            Real-time analytics to optimize clinic workflows and patient care.
           </p>
         </motion.div>
 
@@ -83,38 +94,54 @@ const slides = [
           className="bg-blue-100 rounded-xl p-8"
         >
           <h2 className="text-xl font-bold text-blue-900">
-            Enhanced Data Security
+            Secure & Standards-Compliant
           </h2>
           <p className="mt-2 text-gray-700">
-            Built for regulated healthcare environments.
+            Built on trusted healthcare standards to safeguard patient data.
           </p>
         </motion.div>
       </div>
     ),
   },
 ];
-
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 6500);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
+  // keyboard navigation
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
-    <section className="relative bg-white py-10 md:py-20 overflow-hidden">
+    <section
+      className="relative bg-gradient-to-r from-white to-slate-50 py-10 md:py-20 overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
 
       {/* Arrows */}
       {/* Arrows - stack on mobile, side on desktop */}
       <button
         onClick={prevSlide}
+        aria-label="Previous slide"
         className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
       >
         ←
@@ -122,6 +149,7 @@ export default function HeroSlider() {
 
       <button
         onClick={nextSlide}
+        aria-label="Next slide"
         className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
       >
         →
@@ -158,7 +186,7 @@ export default function HeroSlider() {
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="relative w-full max-w-xs h-[260px] sm:h-[320px] md:w-[420px] md:h-[420px]"
+                className="relative w-full max-w-xs h-[260px] sm:h-[320px] md:w-[420px] md:h-[420px] rounded-xl overflow-hidden shadow-xl"
               >
                 <Image
                   src={slides[index].image}
@@ -176,9 +204,52 @@ export default function HeroSlider() {
               >
                 {slides[index].footerText}
               </motion.p>
+
+              <div className="mt-4">
+                <button
+                  onClick={() => alert('Contact us — implement form')}
+                  className="bg-teal-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-teal-700 transition"
+                >
+                  Contact Us
+                </button>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* Mobile controls + dots */}
+        <div className="md:hidden flex flex-col items-center mt-6">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous"
+              className="bg-white shadow px-3 py-2 rounded-md"
+            >
+              ←
+            </button>
+
+            <div className="flex items-center gap-2">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    i === index ? "bg-teal-600 w-3 h-3" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextSlide}
+              aria-label="Next"
+              className="bg-white shadow px-3 py-2 rounded-md"
+            >
+              →
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -6,19 +6,21 @@ import { useState } from "react";
 interface Project {
   title: string;
   description: string;
-  image: string; // URL or local path
+  image: string;
 }
 
 export default function FeaturedProjects() {
   const projects: Project[] = [
     {
-      title: "Smart Wearable for Cardiac Monitoring",
-      description: "Enabled early detection of arrhythmia in real-world patients",
+      title: "AI-Powered Patient Monitoring",
+      description:
+        "Smart wearables and dashboards for continuous cardiac and vital signs monitoring in clinics.",
       image: "/Cardiologist-bro.png",
     },
     {
-      title: "Real-World Evidence Analytics for Post-Market Safety",
-      description: "Improved detection of adverse events across multiple geographies",
+      title: "Clinical Workflow Optimization",
+      description:
+        "Real-time analytics for post-market safety, appointment management, and operational efficiency.",
       image: "/Vaccine development-bro.png",
     },
   ];
@@ -36,7 +38,7 @@ export default function FeaturedProjects() {
         >
           <h2 className="text-4xl font-bold text-gray-900">Case Studies & Success Stories</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Real-world applications of our AI and MedTech expertise driving impactful outcomes.
+            How our clinic software and AI solutions are improving patient care and operational outcomes.
           </p>
         </motion.div>
 

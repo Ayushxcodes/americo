@@ -12,27 +12,27 @@ interface ProcessStep {
 export default function HowWeWorkTimelineWithImages() {
   const steps: ProcessStep[] = [
     {
-      title: "Consult & Understand Needs",
+      title: "Discovery & Consultation",
       description:
-        "We analyse your objectives, regulatory constraints, and realistic timelines.",
+        "We engage with stakeholders to understand research goals, clinical needs, and real-world constraints, ensuring AI-driven solutions align with your objectives.",
       image: "/Doctors-bro.png",
     },
     {
-      title: "Design & Strategy Planning",
+      title: "Design & Strategic Planning",
       description:
-        "Align drug/device pipelines, data architecture, compliance and roadmap.",
+        "We develop integrated pipelines for pharmaceuticals, medical devices, and AI models, aligning regulatory requirements, validation, and commercialization strategy.",
       image: "/Medical prescription-bro.png",
     },
     {
-      title: "Implementation & Development",
+      title: "Development & Integration",
       description:
-        "AI-modeling, device design, data integration, trial infrastructure.",
+        "End-to-end implementation of AI-powered platforms, smart diagnostic instruments, data integration, and clinical trial infrastructure for actionable insights.",
       image: "/Laboratory-bro.png",
     },
     {
-      title: "Deployment & Monitoring",
+      title: "Deployment & Continuous Improvement",
       description:
-        "Post-market surveillance, feedback loops, continuous improvement.",
+        "We ensure real-world monitoring, post-market surveillance, and iterative enhancement of AI and MedTech solutions for sustainable healthcare impact.",
       image: "/Retroviruses-bro.png",
     },
   ];
@@ -50,7 +50,7 @@ export default function HowWeWorkTimelineWithImages() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Our Process</h2>
           <p className="mt-2 sm:mt-4 text-base sm:text-lg text-gray-600">
-            How we deliver impactful outcomes from concept to deployment.
+            From molecule to monitoring — how we bring AI-powered pharmaceutical and medical technology solutions to real-world impact.
           </p>
         </motion.div>
 

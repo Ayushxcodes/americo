@@ -6,7 +6,7 @@ import { useState } from "react";
 interface WhyPoint {
   title: string;
   description: string;
-  Icon: (props: { color: string }) => React.JSX.Element; // <-- use React.JSX.Element
+  Icon: (props: { color: string }) => React.JSX.Element;
   GrayLogo: () => React.JSX.Element;
   ColorLogo: () => React.JSX.Element;
 }
@@ -26,9 +26,9 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-10 md:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Why We Stand Out</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Why Choose Us</h2>
           <p className="mt-2 sm:mt-4 text-base sm:text-lg text-gray-600">
-            What makes our approach different — and trusted by innovators across Pharma & MedTech.
+            What sets our clinic software apart — trusted by healthcare innovators worldwide.
           </p>
         </motion.div>
 
@@ -67,10 +67,9 @@ export default function WhyChooseUs() {
 interface WhyCardProps {
   title: string;
   description: string;
-  Icon: (props: { color: string }) => React.JSX.Element; // <-- use React.JSX.Element
+  Icon: (props: { color: string }) => React.JSX.Element;
   GrayLogo: () => React.JSX.Element;
   ColorLogo: () => React.JSX.Element;
-
   delay: number;
 }
 
@@ -96,7 +95,6 @@ function WhyCard({ title, description, Icon, GrayLogo, ColorLogo, delay }: WhyCa
         }}
         className="rounded-2xl bg-white border border-gray-200 p-8 transition-all cursor-pointer"
       >
-        {/* Icon */}
         <motion.div
           animate={{ scale: hover ? 1.15 : 1 }}
           transition={{ type: "spring", stiffness: 180, damping: 12 }}
@@ -117,9 +115,9 @@ function WhyCard({ title, description, Icon, GrayLogo, ColorLogo, delay }: WhyCa
 
 const whyPoints: WhyPoint[] = [
   {
-    title: "End-to-End Integration",
+    title: "Seamless Clinic Integration",
     description:
-      "From drug discovery to devices, clinical trials, and post-market AI monitoring — we support the full lifecycle.",
+      "Connect patient records, appointments, and devices in one intuitive platform for end-to-end workflow management.",
     Icon: ({ color }) => (
       <svg width="36" height="36" stroke={color} strokeWidth="2" fill="none">
         <path d="M3 8h18M3 16h18M3 24h18" />
@@ -138,7 +136,7 @@ const whyPoints: WhyPoint[] = [
   {
     title: "Multidisciplinary Expertise",
     description:
-      "A deep-tech team combining pharma R&D, AI/ML, medical-device design, and regulatory engineering.",
+      "Our team blends clinical, technical, and AI expertise to deliver intelligent solutions tailored for healthcare providers.",
     Icon: ({ color }) => (
       <svg width="36" height="36" fill="none" stroke={color} strokeWidth="2">
         <circle cx="12" cy="8" r="4" />
@@ -155,9 +153,9 @@ const whyPoints: WhyPoint[] = [
     ),
   },
   {
-    title: "AI-First, Evidence-Driven",
+    title: "AI-Driven Insights",
     description:
-      "Using cutting-edge models + robust data methodologies to generate reproducible, validated outcomes.",
+      "Leverage predictive analytics and AI tools to optimize patient care, resource allocation, and operational efficiency.",
     Icon: ({ color }) => (
       <svg width="36" height="36" fill="none" stroke={color} strokeWidth="2">
         <circle cx="12" cy="12" r="10" />
@@ -172,9 +170,9 @@ const whyPoints: WhyPoint[] = [
     ),
   },
   {
-    title: "Quality & Compliance Focus",
+    title: "Compliance & Security",
     description:
-      "We embed QA, regulatory workflows, and safety evaluation early — ensuring reliability and trust.",
+      "Built-in QA, regulatory workflows, and data security ensure your clinic meets industry standards with confidence.",
     Icon: ({ color }) => (
       <svg width="36" height="36" fill="none" stroke={color} strokeWidth="2">
         <path d="M12 2l8 4v6c0 6-4 11-8 12-4-1-8-6-8-12V6l8-4z" />
@@ -189,9 +187,9 @@ const whyPoints: WhyPoint[] = [
     ),
   },
   {
-    title: "Custom Solutions & Flexibility",
+    title: "Customizable & Scalable",
     description:
-      "Tailored support for startups, research institutes, and established pharma + MedTech global teams.",
+      "Adapt our software to your clinic’s size, specialty, and workflow requirements for maximum flexibility and efficiency.",
     Icon: ({ color }) => (
       <svg width="36" height="36" fill="none" stroke={color} strokeWidth="2">
         <rect x="4" y="6" width="16" height="12" rx="2" />

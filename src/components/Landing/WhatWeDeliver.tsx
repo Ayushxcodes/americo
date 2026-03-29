@@ -13,7 +13,7 @@ export default function ServicesSection() {
             Our Services & Capabilities
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Integrated solutions across pharmaceuticals, MedTech, AI, and real-world healthcare.
+            Comprehensive solutions to streamline clinic operations and enhance patient care.
           </p>
         </div>
 
@@ -21,14 +21,11 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
 
           {/* SERVICE 1 */}
-          
-
-          {/* SERVICE 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.5 }}
             className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
           >
             <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
@@ -43,21 +40,16 @@ export default function ServicesSection() {
               Smart Medical Devices & Diagnostics Integration
             </h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              We design and implement AI-powered diagnostic and monitoring 
-              devices — from imaging and metabolic monitoring to wearable 
-              and connected health systems.
+              Implement AI-powered diagnostic and monitoring devices — from imaging and wearable systems to connected health solutions for seamless patient care.
             </p>
           </motion.div>
 
-          {/* SERVICE 3 */}
-          
-
-          {/* SERVICE 4 */}
+          {/* SERVICE 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65 }}
+            transition={{ duration: 0.55 }}
             className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
           >
             <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
@@ -69,11 +61,57 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="text-xl font-semibold text-gray-900">
-              Regulatory & Safety Monitoring + Post-Market Surveillance
+              Regulatory & Compliance Monitoring
             </h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              We provide AI-assisted pharmacovigilance, safety monitoring, quality 
-              control and compliance support to ensure continuous product quality.
+              Ensure your clinic meets healthcare regulations with built-in compliance tools, automated safety monitoring, and quality assurance workflows.
+            </p>
+          </motion.div>
+
+          {/* SERVICE 3 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
+          >
+            <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+              {/* Dashboard Icon */}
+              <svg width="30" height="30" fill="none" stroke="#14b8a6" strokeWidth="2">
+                <path d="M3 12h18M12 3v18" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+
+            <h3 className="text-xl font-semibold text-gray-900">
+              Smart Clinic Workflow & Analytics
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              Use AI-driven analytics to monitor patient flow, optimize staff scheduling, and improve overall clinic efficiency.
+            </p>
+          </motion.div>
+
+          {/* SERVICE 4 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65 }}
+            className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-2xl hover:shadow-md transition"
+          >
+            <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+              {/* Cloud Sync Icon */}
+              <svg width="30" height="30" fill="none" stroke="#14b8a6" strokeWidth="2">
+                <path d="M4 15a7 7 0 1 1 14 0h-2a5 5 0 1 0-10 0H4z" />
+              </svg>
+            </div>
+
+            <h3 className="text-xl font-semibold text-gray-900">
+              Secure & Standards-Compliant Data
+            </h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">
+              Protect patient information with secure, HIPAA-compliant storage and data management systems designed for modern healthcare environments.
             </p>
           </motion.div>
 
@@ -94,12 +132,10 @@ export default function ServicesSection() {
             </div>
 
             <h3 className="text-xl font-semibold text-gray-900">
-              Consulting & Strategy for Pharma + MedTech Startups
+              Consulting & Strategy for Clinic Growth
             </h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              We advise teams on AI adoption, product pipeline development,
-              regulatory navigation, and scaling integrated drug-device and 
-              diagnostic technologies.
+              We guide healthcare providers on software adoption, workflow optimization, compliance, and scaling clinic operations efficiently.
             </p>
           </motion.div>
 
