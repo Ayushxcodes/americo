@@ -32,7 +32,7 @@ const standForItems = [
 
 const coreCompetencies = [
   "AI-assisted diagnostics and imaging tools",
-  "Smart wearables & monitoring devices",
+  "Serving Intelligent AI to optimize Healthcare Clinics",
   "Real-world evidence and post-market analytics",
   "Regulatory support, quality systems & compliance",
   "Scientific consulting for pharma & MedTech startups",

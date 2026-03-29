@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -10,6 +12,7 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
 ];
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,18 +25,12 @@ const Navbar = () => {
       className="sticky top-0 left-0 w-full z-50 bg-white/75 backdrop-blur-sm shadow-md border-b border-neutral-200 px-4 sm:px-6 py-3 flex items-center justify-between"
     >
       <Link href="/" className="flex items-center gap-3">
-        <span className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg shadow-sm">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <path d="M12 2L15 8H9L12 2Z" fill="white" />
-            <path d="M12 22L9 16H15L12 22Z" fill="white" />
-          </svg>
-        </span>
         <span className="font-bold text-lg sm:text-xl text-neutral-800 tracking-tight">Americo-E-Medico</span>
       </Link>
 
       <div className="hidden md:flex gap-8 items-center">
         <nav className="flex gap-6 items-center" aria-label="Primary">
-          {navLinks.map((link) => (
+          {navLinks.filter(link => link.name !== "Contact").map((link) => (
             <Link
               key={link.name}
               href={link.href}
@@ -44,13 +41,12 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
-
-        <Link
-          href="/contact"
-          className="ml-2 inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md font-semibold shadow-sm transition"
+        <Button
+          asChild
+          className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-bold px-6 py-2 rounded-xl shadow-lg transition-all duration-200 transform hover:-translate-y-1 hover:scale-105 text-base tracking-wide"
         >
-          Get in touch
-        </Link>
+          <Link href="/contact">Contact</Link>
+        </Button>
       </div>
 
       {/* Mobile menu button */}

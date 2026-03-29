@@ -41,14 +41,14 @@ export default function PartnersSection() {
           <img
             src="/Conversation-bro.png"
             alt="Healthcare Left"
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-56 h-auto object-contain hidden md:block"
+            className="absolute left-0 top-3/4 -translate-y-1/2 w-32 md:w-56 h-auto object-contain hidden md:block"
             style={{ zIndex: 2 }}
           />
           {/* Right image */}
           <img
             src="/Mobile Marketing-bro.png"
             alt="Healthcare Right"
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-56 h-auto object-contain hidden md:block"
+            className="absolute right-0 top-3/4 -translate-y-1/2 w-32 md:w-56 h-auto object-contain hidden md:block"
             style={{ zIndex: 2 }}
           />
           <motion.h2
@@ -99,7 +99,7 @@ export default function PartnersSection() {
             We believe the next big breakthroughs in medicine will come from collaboration, curiosity, and cutting-edge innovation. Whether you are a research institute, a pharmaceutical company, or a MedTech startup, we’re here to support your vision.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-teal-600 transition-colors"
           >
             Connect With Us

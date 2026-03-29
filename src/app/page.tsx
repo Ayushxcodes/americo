@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div className='py-10'>
       <HeroSection />
-      <WhoAreWe />
+      
       <WhatWeDeliver />
       <WhyChooseUs />
       <WhyAmericoeMedico />

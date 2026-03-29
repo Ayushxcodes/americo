@@ -65,7 +65,7 @@ const slides = [
       </>
     ),
     subtitle:
-      "HIPAA-compliant, secure, and reliable software for modern clinics.",
+      "HIPAA-compliant, secure,&reliable software for modern clinics.",
     image: "/Chat_bot.gif",
     footerText:
       "Protecting sensitive healthcare data while optimizing operations.",
@@ -139,13 +139,6 @@ export default function HeroSlider() {
 
       {/* Arrows */}
       {/* Arrows - stack on mobile, side on desktop */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous slide"
-        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg px-4 py-3 rounded-full hover:bg-gray-200"
-      >
-        ←
-      </button>
 
       <button
         onClick={nextSlide}

@@ -35,10 +35,10 @@ export default function OurStory() {
             Our journey began with a simple belief — that the next generation of healthcare breakthroughs will come from the seamless fusion of science, data, and intelligent technologies.
           </p>
           <p className="text-gray-600 mb-3">
-            Recognizing the growing need for faster, safer, and more precise innovations in pharmaceuticals and medical devices, we set out to build an organization that works across disciplines to accelerate progress.
+            Recognizing the growing need for faster, safer, and more precise innovations in Healthcare Industry, we set out to build an organization that works across disciplines to accelerate progress.
           </p>
           <p className="text-gray-600">
-            Today, we support partners across pharma, biotech, MedTech, and clinical research with solutions that enhance discovery, improve diagnostics, and advance patient care. From molecular modeling and AI-driven screening to device development and real-world evidence analytics, we help turn complex challenges into measurable outcomes.
+            Today, we support partners across clinics, pharmaceuticals, biotech, MedTech, and clinical research with solutions that enhance discovery, improve diagnostics, and advance patient care. From molecular modeling and AI-driven screening to device development and real-world evidence analytics, we help turn complex challenges into measurable outcomes.
           </p>
         </motion.div>
 
